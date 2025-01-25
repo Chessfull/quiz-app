@@ -1,0 +1,30 @@
+/* Container */
+.welcome-card {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+/* This is content part middle of welcome card */
+  .quiz-info {
+    margin: 5% 0;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  
+  .start-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.7rem;
+    transition: background-color 0.3s;
+  }
+  
+  .start-button:hover {
+    background-color: #45a049;
+  }

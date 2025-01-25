@@ -1,0 +1,30 @@
+@import '../src/styles/QuizScreen.css';
+@import '../src/styles/WelcomeScreen.css';
+@import '../src/styles/ResultScreen.css';
+
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f7d794);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.app-container {
+  width: 1400px;
+  background: linear-gradient(to right, #ffffff, #e6f2ff);
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border: 5px solid #ffffff;
+}

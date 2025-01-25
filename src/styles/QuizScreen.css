@@ -1,0 +1,85 @@
+.quiz-container {
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .quiz-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  .question-counter,
+  .timer {
+    font-size: 48px;
+    font-weight: bold;
+    color: #f44336;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .question-image {
+    max-width: 500px;
+    margin: 0 auto 20px;
+  }
+  
+  .question-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .question-text {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .options-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .option-button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .option-button.option-hidden {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: transparent;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .option-button.visible {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .option-button.correct {
+    background-color: #4CAF50 !important;
+    color: white;
+  }
+  
+  .option-button.incorrect {
+    background-color: #f44336 !important;
+    color: white;
+  }
+
+  .timer {
+    animation: pulse 1s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }

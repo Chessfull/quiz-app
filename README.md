@@ -4,15 +4,13 @@
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-**PROJECT LINK ON NETLIFY ->**
+**PROJECT LINK ON NETLIFY ->** https://react-quiz-app-mt.netlify.app/
 
-An interactive quiz application that tests users' knowledge with engaging questions, timed responses, and immediate feedback.
+A challenging quiz game with 10 unique questions, timer-based gameplay, and a fun, gradient-styled interface. Users navigate through questions with time constraints and receive instant result feedback.
 
 ## 📋 Overview
 
--Video-
-
-A challenging quiz game with 10 unique questions, timer-based gameplay, and a fun, gradient-styled interface. Users navigate through questions with time constraints and receive instant result feedback.
+https://github.com/user-attachments/assets/096a7b12-19a5-4cb9-97fa-abbca78a6f14
 
 ## 🚀 Features
 

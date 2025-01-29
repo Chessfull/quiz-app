@@ -1,29 +1,64 @@
 import React from 'react';
 
-// -> Component for the result screen in the end like your counts ...
-function ResultScreen({ results, onRestartQuiz }) {
+const ResultScreen = ({ results, questions, onRestartQuiz }) => {
   return (
-    <div className="result-container">
-      <div className="result-card">
-
-        {/* ▼ Display of quiz results ▼ */}
-        <h1>Quiz Results</h1>
-        <div className="result-details">
-          <p>✅ Doğru: {results.correct}</p>
-          <p>❌ Yanlış: {results.incorrect}</p>
-          <p>❓ Boş: {results.unanswered}</p>
+    <div className="quiz-container">
+      <div className="result-content">
+        {/* Left side - Question Details */}
+        <div className="result-answers">
+          <h3>Soru Detayları</h3>
+          <div className="answers-list">
+            {questions.map((question, index) => (
+              <div 
+                key={index} 
+                className={`answer-item ${
+                  results.answers && results.answers[index]
+                    ? results.answers[index].isCorrect 
+                      ? 'correct'
+                      : 'incorrect'
+                    : 'unanswered'
+                }`}
+              >
+                <div className="question-number">Soru {index + 1}</div>
+                <div className="answer-content">
+                  {results.answers && results.answers[index] ? (
+                    <>
+                      <div className="user-answer">
+                        Cevabınız: {results.answers[index].selectedAnswer || 'Boş'}
+                      </div>
+                      <div className="correct-answer">
+                        Doğru Cevap: {question.answer}
+                      </div>
+                    </>
+                  ) : (
+                    <div className="user-answer">Cevaplanmadı</div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <button 
-          onClick={onRestartQuiz} /* -> Button for restarting to quiz */
-          className="restart-button"
-        >
-          Restart Quiz
-        </button>
-
+        {/* Right side - Quiz Results */}
+        <div className="result-summary">
+          <h3>Quiz Sonuçları</h3>
+          <div className="result-details">
+            <p className="correct">✅ Doğru: {results.correct}</p>
+            <p className="incorrect">❌ Yanlış: {results.incorrect}</p>
+            <p className="unanswered">
+              ❓ Boş: {questions.length - (results.correct + results.incorrect)}
+            </p>
+          </div>
+          <button 
+            onClick={onRestartQuiz}
+            className="restart-button"
+          >
+            Testi Tekrarla
+          </button>
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default ResultScreen;

@@ -10,7 +10,7 @@ A challenging quiz game with 10 unique questions, timer-based gameplay, and a fu
 
 ## 📋 Overview
 
-https://github.com/user-attachments/assets/096a7b12-19a5-4cb9-97fa-abbca78a6f14
+https://github.com/user-attachments/assets/84409da0-ad92-48a5-bca9-d28ce6eeb504
 
 ## 🚀 Features
 

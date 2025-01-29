@@ -15,6 +15,7 @@ function QuizScreen({ questions, onQuizComplete }) {
     correct: 0,
     incorrect: 0,
     unanswered: 0,
+    answers: []
   });
 
   const currentQuestion = questions[currentQuestionIndex]; // -> Get the current question
@@ -44,7 +45,15 @@ function QuizScreen({ questions, onQuizComplete }) {
           clearInterval(countdownTimer); // -> Stop timer when no time
           setQuizResults((prev) => ({
             ...prev,
-            unanswered: prev.unanswered + 1, // -> Mark the question as unanswered for result
+            unanswered: prev.unanswered + 1,
+            answers: [
+              ...prev.answers,
+              {
+                questionIndex: currentQuestionIndex,
+                selectedAnswer: null,
+                isCorrect: false
+              }
+            ]
           }));
           moveToNextQuestion(); // -> Move to the next question
           return 0;
@@ -62,19 +71,29 @@ function QuizScreen({ questions, onQuizComplete }) {
 
   // ▼ Handle answer selection ▼
   const handleAnswerSelect = (answer) => {
-    if (!optionsVisible || selectedAnswer) return; // -> Do nothing if options are hidden or an answer is already selected
-
+    if (!optionsVisible || selectedAnswer) return;
+  
     setSelectedAnswer(answer);
-
-    const isCorrect = answer === currentQuestion.answer; // -> Check if the answer is correct
+    const isCorrect = answer === currentQuestion.answer;
+  
     setQuizResults((prev) => ({
       ...prev,
       correct: isCorrect ? prev.correct + 1 : prev.correct,
       incorrect: !isCorrect ? prev.incorrect + 1 : prev.incorrect,
+      answers: [
+        ...prev.answers,
+        {
+          questionIndex: currentQuestionIndex,
+          selectedAnswer: answer,
+          isCorrect: isCorrect
+        }
+      ]
     }));
 
     setTimeout(moveToNextQuestion, 1000); // -> Go to the next question after 1 second
   };
+
+
 
   return (
     <div className="quiz-container">
